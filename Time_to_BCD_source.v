@@ -56,43 +56,7 @@ module mult_try(input clk,rst,EnI,output reg manch,output reg temp);
                manch<=1'b0;
             end
             
-        else if(EnI==1'b1)
-            begin
-                   if(En1==1'b0)
-                            begin   
-                                           
-                                            if(i<400000)//runs the loop if value of i is less than 10k untill 20Us in real time
-                                                begin
-                                                    i<=i+1;
-                                                   temp<=1'b1;
-                                                end
-                                            
-                                            else if((i>=400000)&&(i<500000))//untill 80us the i value incremenets and temp is set to 0
-                                                begin
-                                                  i<=i+1;
-                                                  temp<=1'b0;
-                                                end
-                                             else if (i==500000)
-                                                begin
-                                                    i<=1;
-                                                    temp<=1'b0;
-                                                    // temp<=1'b0;
-                                                   index<=1;
-                                                   //index_1<=((index+1'b1)%4'd10)+1'b1;
-                                                 En1<=1'b1;
-                                                end 
-                                        
-                           end
-                   if(En1==1'b1)            
-                        begin
-                                 value<=arr[index];
-                                 ind=index;
-                                
-                                 if(arr[index]==1'b0)//if(b1==1'b0)
-                                        begin                //10 - 20000   1 -2000
-                                                             // 100000 - 2ms
-                                                             // 500000 - 10ms
-                                                             // 50000  - 1ms
+       
                                         
                                                             if(i<100000)//runs the loop if value of i is less than 10k untill 20Us in real time
                                                                 begin
@@ -272,23 +236,3 @@ module mult_try(input clk,rst,EnI,output reg manch,output reg temp);
     end
 endmodule
 
-module mult16(product,multiplier,multiplicand);
-   input [15:0]  multiplier, multiplicand;
-   output        product;
-   reg [31:0]    product;
-   reg [4:0]i;
-
-   always @( multiplier or multiplicand )
-
-     begin
-        product[31:16] = 16'd0;
-        product[15:0] = multiplier;
-        //c=1'b0;
-        for(i=0;(~(i[4]==1));i=i+1)
-        begin
-        product[31:16] = product[0]?product[31:16] + multiplicand:product[31:16];
-        product[31:0] = {1'b0,product[31:1]};
-        end
-        end    
-
-endmodule
