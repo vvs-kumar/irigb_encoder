@@ -1,4 +1,4 @@
-# irigb_encoder
+# IRIG-B_MANCHESTER ENCODNG
 This project Takes a static time and converts it to Binary Coded Decimal (BCD) and this Binary Coded Decimal (BCD) is encoded into IRIG B format, which is further encoded to Manchester encoding for transmission.
 
 Input is Clock and Reset with an enable signal.
