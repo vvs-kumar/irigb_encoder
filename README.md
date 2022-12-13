@@ -26,4 +26,6 @@ Encoded IRIG B            Manchester Encoding
 
 The Manchester encoding operates at 1KHZ Frequency, IRIG B encoding operates at 100Hz Frequency.
 For a single cycle manchester encoding has 10 cycles.
+
+This is the Image of encoder chip designed in Cadence.
 ![image](https://user-images.githubusercontent.com/53949655/207242654-1cece41a-1e94-4ef5-a45a-85db5e1f7460.png)
